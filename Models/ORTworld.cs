@@ -17,16 +17,17 @@ class ORTworld{
         ListaDestinos.Add("ROMA, ITALIA");
         ListaDestinos.Add("ATENAS, GRECIA");
 
-        ListaHoteles.Add("hotelAtenas.jpeg");
         ListaHoteles.Add("hotelBuenosAires.jpg");
-        ListaHoteles.Add("hotelCasaBlanca.jpg");
-        ListaHoteles.Add("hotelMadrid.jpg");
-        ListaHoteles.Add("hotelMontevideo.jpg");
-        ListaHoteles.Add("hotelMoscu.jpeg");
-        ListaHoteles.Add("hotelNewYork.jpeg");
-        ListaHoteles.Add("hotelParis.jpg");
         ListaHoteles.Add("hotelPorto.jpg");
+        ListaHoteles.Add("hotelParis.jpg");
+        ListaHoteles.Add("hotelMadrid.jpg");
+        ListaHoteles.Add("hotelNewYork.jpeg");
+        ListaHoteles.Add("hotelMoscu.jpeg");
+        ListaHoteles.Add("hotelCasaBlanca.jpg");
+        ListaHoteles.Add("hotelMontevideo.jpg");
         ListaHoteles.Add("hotelRoma.jpg");
+        ListaHoteles.Add("hotelAtenas.jpeg");
+        
         
         ListaAereos.Add("AerolineasArgentinas.png");
         ListaAereos.Add("aeromexico.png");
@@ -39,16 +40,16 @@ class ORTworld{
         ListaAereos.Add("turkishairlines.png");
         ListaAereos.Add("unitedairlines.png");
 
-        ListaExcursiones.Add("bsasExc.jpeg");
-        ListaExcursiones.Add("casabExc.jpeg");
-        ListaExcursiones.Add("greciaExc.jpeg");
-        ListaExcursiones.Add("madridExc.jpeg");
-        ListaExcursiones.Add("montevExc.jpeg");
-        ListaExcursiones.Add("moscuExc.jpeg");
-        ListaExcursiones.Add("newExc.jpeg");
+        ListaExcursiones.Add("bsasExc.jpeg");        
+        ListaExcursiones.Add("portoExc.jpeg"); 
         ListaExcursiones.Add("parisExc.jpeg");
-        ListaExcursiones.Add("portoExc.jpeg");
+        ListaExcursiones.Add("madridExc.jpeg");
+        ListaExcursiones.Add("newExc.jpeg");
+        ListaExcursiones.Add("moscuExc.jpeg");
+        ListaExcursiones.Add("casabExc.jpeg");
+        ListaExcursiones.Add("montevExc.jpeg");
         ListaExcursiones.Add("romaExc.jpeg");
+        ListaExcursiones.Add("greciaExc.jpeg");
         
     }
     static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete) {

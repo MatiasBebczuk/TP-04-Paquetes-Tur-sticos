@@ -19,4 +19,14 @@ public class HomeController : Controller
         //ViewBag.DiccionaryPaquetes = new Dictionary<>
         return View();
     }
+    public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion){
+        ORTworld values = new ORTworld();
+        
+        Paquete tempPaquete = new Paquete(values.ListaDestinos[Destino], values.ListaHoteles[Hotel], values.ListaAereos[Aereo], values.ListaExcursiones[Excursion]);
+        ViewBag.ListaDestinos = values.ListaDestinos;
+        ViewBag.ListaHoteles = values.ListaHoteles;
+        ViewBag.ListaAereos = values.ListaAereos;
+        ViewBag.ListaExcursiones = values.ListaExcursiones;
+        return View();
+    }
 }
