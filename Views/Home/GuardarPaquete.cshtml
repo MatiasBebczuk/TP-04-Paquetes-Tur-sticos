@@ -1,6 +1,7 @@
-<form action="">
-
+<form method="Post" action='@Url.Action(GuardarPaquete(), Home)'>
+    @{ int destino; }
     <section>
+        <p>@ViewBag.errorMsg</p>
         <div>
             <p>Dirección de E-Mail: </p> <input type="email" placeholder="MatiasIlan@gmail.com" required="required"><br>
             <p>Apellido: </p> <input type="text" placeholder="Bebczuk" required="required"><br>
@@ -13,7 +14,6 @@
             <p>Altura (en cm): </p> <input type="acm" placeholder="165cm" required="required"><br>
             <p>Peso (en kg): </p> <input type="acm" placeholder="60kg" required="required"><br>
             <p>Eliga su destino:</p>
-            @{ int destino; }
             <select>
               <option>@ViewBag.ListaDestinos[0] @{ destino = 0; }</option>
               <option>@ViewBag.ListaDestinos[1] @{ destino = 1; }</option>
@@ -37,6 +37,7 @@
         <p>Teléfono de contacto: </p> <input type="tel" placeholder=" xx + 1234-5678" required="required"><br>
     </div>
     <p>Su Hotel de su estadia sera:</p>
+    <option>@ViewBag.ListaHoteles[destino]</option>
     <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[destino]">
     <p>Aerolinea:</p>
     <select>
@@ -52,6 +53,7 @@
         <option>@ViewBag.ListaAereos[9]</option>
     </select>
     <p>El paquete incluye la siguiente excursion:</p>
+    <option>@ViewBag.ListaExcursiones[destino]</option>
     <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[destino]">
     <p>Ingrese su ficha médica para finalizar con el Apto.</p>
     <input type="file" name="archivo_apto">

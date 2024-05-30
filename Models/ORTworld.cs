@@ -52,12 +52,11 @@ class ORTworld{
         ListaExcursiones.Add("greciaExc.jpeg");
         
     }
-    static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete) {
+    public static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete) {
         bool existe = Paquetes.Keys.Contains(destinoSeleccionado);
         if(!existe){
             Paquetes.Add(destinoSeleccionado, paquete);
         }
         return existe;
     }
-
 }

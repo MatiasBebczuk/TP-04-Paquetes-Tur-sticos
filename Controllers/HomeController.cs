@@ -20,13 +20,18 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion){
-        ORTworld values = new ORTworld();
-        
-        Paquete tempPaquete = new Paquete(values.ListaDestinos[Destino], values.ListaHoteles[Hotel], values.ListaAereos[Aereo], values.ListaExcursiones[Excursion]);
-        ViewBag.ListaDestinos = values.ListaDestinos;
-        ViewBag.ListaHoteles = values.ListaHoteles;
-        ViewBag.ListaAereos = values.ListaAereos;
-        ViewBag.ListaExcursiones = values.ListaExcursiones;
+        ViewBag.ListaDestinos = ORTworld.ListaDestinos;
+        ViewBag.ListaHoteles = ORTworld.ListaHoteles;
+        ViewBag.ListaAereos = ORTworld.ListaAereos;
+        ViewBag.ListaExcursiones = ORTworld.ListaExcursiones;
+        ViewBag.erroMsg = "Rellene el siguiente formulario";
+        if(!(Destino > 9 || Destino < 0 || Hotel > 9 || Hotel < 0 || Aereo > 9 || Aereo < 0 || Excursion > 9 || Excursion < 0)){
+            Paquete tempPaquete = new Paquete(ORTworld.ListaHoteles[Hotel], ORTworld.ListaAereos[Aereo], ORTworld.ListaExcursiones[Excursion]);
+            ORTworld.IngresarPaquete(ORTworld.ListaDestinos[Destino], tempPaquete);
+        }
+        else{
+            ViewBag.erroMsg = "Error, los datos ingresados no son correctos";
+        }
         return View();
     }
 }
