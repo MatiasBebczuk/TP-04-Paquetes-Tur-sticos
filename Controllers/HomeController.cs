@@ -28,10 +28,15 @@ public class HomeController : Controller
         if(!(Destino > 9 || Destino < 0 || Hotel > 9 || Hotel < 0 || Aereo > 9 || Aereo < 0 || Excursion > 9 || Excursion < 0)){
             Paquete tempPaquete = new Paquete(ORTworld.ListaHoteles[Hotel], ORTworld.ListaAereos[Aereo], ORTworld.ListaExcursiones[Excursion]);
             ORTworld.IngresarPaquete(ORTworld.ListaDestinos[Destino], tempPaquete);
+            Index();
         }
         else{
             ViewBag.erroMsg = "Error, los datos ingresados no son correctos";
         }
+        return View();
+    }
+    public IActionResult SelectPaquete(){
+        ViewBag.ListaPaquetes = ORTworld.Paquetes;
         return View();
     }
 }

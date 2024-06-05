@@ -1,8 +1,12 @@
-<form method="Post" action='@Url.Action(GuardarPaquete(), Home)'>
-    @{ int destino; }
+@{
+    ViewData["Title"] = "Guardar Paquete";
+}
+
+<form action='@Url.Action("GuardarPaquete", "Home")' method="Post">
+    @{ int destino = 0; }
     <section>
         <p>@ViewBag.errorMsg</p>
-        <div>
+        <!--<div>
             <p>Dirección de E-Mail: </p> <input type="email" placeholder="MatiasIlan@gmail.com" required="required"><br>
             <p>Apellido: </p> <input type="text" placeholder="Bebczuk" required="required"><br>
             <p>Nombre: </p> <input type="text" placeholder="Matias" required="required">
@@ -12,7 +16,7 @@
             <p>Teléfono de contacto: </p> <input type="tel" placeholder=" xx + 1234-5678" required="required"><br>
         </div>
             <p>Altura (en cm): </p> <input type="acm" placeholder="165cm" required="required"><br>
-            <p>Peso (en kg): </p> <input type="acm" placeholder="60kg" required="required"><br>
+            <p>Peso (en kg): </p> <input type="acm" placeholder="60kg" required="required"><br>-->
             <p>Eliga su destino:</p>
             <select>
               <option>@ViewBag.ListaDestinos[0] @{ destino = 0; }</option>
@@ -29,13 +33,14 @@
         <div>
         </div>
     </section>
+    <!--
     <div>
         <p>Contacto de emergencia</p>
         <p>Apellido: </p> <input type="text" placeholder="Perez" required="required"><br>
         <p>Nombre: </p> <input type="text" placeholder="Fernando" required="required">
         <p>Parenteso: </p> <input type="text" placeholder="Padre/Madre/Tutor" required="required">
         <p>Teléfono de contacto: </p> <input type="tel" placeholder=" xx + 1234-5678" required="required"><br>
-    </div>
+    </div>-->
     <p>Su Hotel de su estadia sera:</p>
     <option>@ViewBag.ListaHoteles[destino]</option>
     <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[destino]">
@@ -54,9 +59,9 @@
     </select>
     <p>El paquete incluye la siguiente excursion:</p>
     <option>@ViewBag.ListaExcursiones[destino]</option>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[destino]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[destino]"><!--
     <p>Ingrese su ficha médica para finalizar con el Apto.</p>
-    <input type="file" name="archivo_apto">
+    <input type="file" name="archivo_apto">-->
     <input type="submit" value="Enviar">
     <p>¡Muchas gracias!</p>
 </form>
