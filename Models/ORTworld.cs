@@ -1,57 +1,9 @@
 class ORTworld{
-    public static List < string > ListaDestinos {get; private set;}
-    public static List < string > ListaHoteles {get; private set;}
-    public static List< string > ListaAereos {get; private set;}
-    public static List< string > ListaExcursiones {get; private set;}
+    public static List < string > ListaDestinos {get; private set;}  = new List<string>{"BUENOS AIRES, ARGENTINA", "PORTO, BRASIL", "PARIS, FRANCIA", "MADRID, ESPAÑA", "NEW YORK, USA", "MOSCÚ, RUSIA", "CASABLANCA, MARRUECOS", "MONTEVIDEO, URUGUAY", "ROMA, ITALIA", "ATENAS, GRECIA"};
+    public static List < string > ListaHoteles {get; private set;} = new List<string>{"hotelBuenosAires.jpg","hotelPorto.jpg", "hotelParis.jpg", "hotelMadrid.jpg", "hotelNewYork.jpeg", "hotelMoscu.jpeg","hotelCasaBlanca.jpg", "hotelMontevideo.jpg", "hotelRoma.jpg", "hotelAtenas.jpeg"};
+    public static List< string > ListaAereos {get; private set;} = new List<string>{"AerolineasArgentinas.png", "aeromexico.png", "AmericanAirlines.png", "flybondi.png", "JetSmart.png", "LADE.png", "Lufthansa.png", "qatarairlines.png", "turkishairlines.png", "unitedairlines.png"};
+    public static List< string > ListaExcursiones {get; private set;} = new List<string>{"bsasExc.jpeg", "portoExc.jpeg", "parisExc.jpeg", "madridExc.jpeg", "newExc.jpeg", "moscuExc.jpeg", "casabExc.jpeg", "montevExc.jpeg", "romaExc.jpeg", "greciaExc.jpeg"};
     public static Dictionary<string, Paquete> Paquetes {get; private set;}
-
-    public ORTworld (){
-        ListaDestinos.Add("BUENOS AIRES, ARGENTINA");
-        ListaDestinos.Add("PORTO, BRASIL");
-        ListaDestinos.Add("PARIS, FRANCIA");
-        ListaDestinos.Add("MADRID, ESPAÑA");
-        ListaDestinos.Add("NEW YORK, USA");
-        ListaDestinos.Add("MOSCÚ, RUSIA");
-        ListaDestinos.Add("CASABLANCA, MARRUECOS");
-        ListaDestinos.Add("MONTEVIDEO, URUGUAY");
-        ListaDestinos.Add("ROMA, ITALIA");
-        ListaDestinos.Add("ATENAS, GRECIA");
-
-        ListaHoteles.Add("hotelBuenosAires.jpg");
-        ListaHoteles.Add("hotelPorto.jpg");
-        ListaHoteles.Add("hotelParis.jpg");
-        ListaHoteles.Add("hotelMadrid.jpg");
-        ListaHoteles.Add("hotelNewYork.jpeg");
-        ListaHoteles.Add("hotelMoscu.jpeg");
-        ListaHoteles.Add("hotelCasaBlanca.jpg");
-        ListaHoteles.Add("hotelMontevideo.jpg");
-        ListaHoteles.Add("hotelRoma.jpg");
-        ListaHoteles.Add("hotelAtenas.jpeg");
-        
-        
-        ListaAereos.Add("AerolineasArgentinas.png");
-        ListaAereos.Add("aeromexico.png");
-        ListaAereos.Add("AmericanAirlines.png");
-        ListaAereos.Add("flybondi.png");
-        ListaAereos.Add("JetSmart.png");
-        ListaAereos.Add("LADE.png");
-        ListaAereos.Add("Lufthansa.png");
-        ListaAereos.Add("qatarairlines.png");
-        ListaAereos.Add("turkishairlines.png");
-        ListaAereos.Add("unitedairlines.png");
-
-        ListaExcursiones.Add("bsasExc.jpeg");        
-        ListaExcursiones.Add("portoExc.jpeg"); 
-        ListaExcursiones.Add("parisExc.jpeg");
-        ListaExcursiones.Add("madridExc.jpeg");
-        ListaExcursiones.Add("newExc.jpeg");
-        ListaExcursiones.Add("moscuExc.jpeg");
-        ListaExcursiones.Add("casabExc.jpeg");
-        ListaExcursiones.Add("montevExc.jpeg");
-        ListaExcursiones.Add("romaExc.jpeg");
-        ListaExcursiones.Add("greciaExc.jpeg");
-        
-    }
     public static bool IngresarPaquete(string destinoSeleccionado, Paquete paquete) {
         bool existe = Paquetes.Keys.Contains(destinoSeleccionado);
         if(!existe){

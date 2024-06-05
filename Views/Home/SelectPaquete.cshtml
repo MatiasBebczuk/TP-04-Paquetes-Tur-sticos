@@ -2,3 +2,39 @@
     ViewData["Title"] = "Guardar Paquete";
 }
 
+<form action='@Url.Action("GuardarPaquete", "Home")' method="Post">
+    <p>@ViewBag.errorMsg</p>
+    <div>
+        <p>Eliga su destino:</p>
+        <p>@ViewBag.ListaDestinos</p>
+        <input type="number" max = "10" min = "1">
+    </div>
+    <p>Su Hotel de su estadia sera:</p>
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[0]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[1]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[2]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[3]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[4]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[5]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[6]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[7]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[8]">
+    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[9]">
+    <p>Aerolinea:</p>
+    <p>@ViewBag.ListaHoteles</p>
+    <input type="number" max = "10" min = "1">
+    <p>El paquete incluye la siguiente excursion:</p>
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[0]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[1]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[2]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[3]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[4]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[5]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[6]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[7]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[8]">
+    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[9]">
+    <input type="number" max = "10" min = "1">
+    <input type="submit" value="Enviar">
+    <p>¡Muchas gracias!</p>
+</form>

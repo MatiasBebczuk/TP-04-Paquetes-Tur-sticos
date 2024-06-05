@@ -16,7 +16,7 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         ViewBag.NombreProyecto = "La vasitlla de Nehuen";
-        //ViewBag.DiccionaryPaquetes = new Dictionary<>
+        ViewBag.ListaPaquetes = ORTworld.Paquetes;
         return View();
     }
     public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion){
@@ -37,6 +37,10 @@ public class HomeController : Controller
     }
     public IActionResult SelectPaquete(){
         ViewBag.ListaPaquetes = ORTworld.Paquetes;
+        ViewBag.ListaDestinos = ORTworld.ListaDestinos;
+        ViewBag.ListaHoteles = ORTworld.ListaHoteles;
+        ViewBag.ListaAereos = ORTworld.ListaAereos;
+        ViewBag.ListaExcursiones = ORTworld.ListaExcursiones;
         return View();
     }
 }
