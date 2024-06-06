@@ -20,17 +20,19 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion){
-        if(!(Destino > 9 || Destino < 0 || Hotel > 9 || Hotel < 0 || Aereo > 9 || Aereo < 0 || Excursion > 9 || Excursion < 0)){
-            Paquete tempPaquete = new Paquete(ORTworld.ListaHoteles[Hotel], ORTworld.ListaAereos[Aereo], ORTworld.ListaExcursiones[Excursion]);
-            ORTworld.IngresarPaquete(ORTworld.ListaDestinos[Destino], tempPaquete);
-            return View(Index());
+        ViewBag.NombreProyecto = "La vasitlla de Nehuen";
+        if(!(Destino > 10 || Destino < 1 || Hotel > 10 || Hotel < 1 || Aereo > 10 || Aereo < 1 || Excursion > 10 || Excursion < 1)){
+            Paquete tempPaquete = new Paquete(ORTworld.ListaHoteles[Hotel - 1], ORTworld.ListaAereos[Aereo - 1], ORTworld.ListaExcursiones[Excursion - 1]);
+            ORTworld.IngresarPaquete(ORTworld.ListaDestinos[Destino - 1], tempPaquete);
+            return View();
         }
         else{
             ViewBag.erroMsg = "Error, los datos ingresados no son correctos";
+            return View(SelectPaquete());
         }
-        return View();
     }
     public IActionResult SelectPaquete(){
+        ViewBag.NombreProyecto = "La vasitlla de Nehuen";
         ViewBag.erroMsg = "Rellene el siguiente formulario";
         ViewBag.ListaPaquetes = ORTworld.Paquetes;
         ViewBag.ListaDestinos = ORTworld.ListaDestinos;
