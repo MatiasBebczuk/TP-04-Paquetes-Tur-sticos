@@ -1,12 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Index";
+    int i = 0;
 }
 
 <div>
     <h1>Index</h1>
     <p>Bienvenidos al sitio web de @ViewBag.NombreProyecto. Pagina con paquetes turisticos de primera calidad.</p>
 </div>
+@if(ViewBag.ListaPaquetes != null){
+    foreach(Paquete x in ViewBag.ListaPaquetes.Values){
+    i++;
+    <p>Paquete numero @i</p>
+    <li>Hotel: @x.Hotel </li>
+    <li>Aereo: @x.Aereo </li>
+    <li>Excursion: @x.Excursion </li>
+    }
+}
 
-<p>@ViewBag.ListaPaquetes</p>
 
 <a href='@Url.Action("SelectPaquete", "Home")'>Crear Paquete</a>
