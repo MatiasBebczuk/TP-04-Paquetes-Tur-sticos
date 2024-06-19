@@ -5,25 +5,29 @@
     <p>@ViewBag.errorMsg</p>
     <div>
         <p>Elija su destino:</p>
+        <input name="Destino" type="number" max = "10" min = "1">
         @foreach(string destino in ViewBag.ListaDestinos)
         {<p>@destino</p>}
-        <input type="number" max = "10" min = "1">
+        
     </div>
     <p>Elija su hotel:</p>
+    <input name="Hotel" type="number" max = "10" min = "1">
     @for(int i = 0; i < 10; i++){
         <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[@i]">
     }
-    <input type="number" max = "10" min = "1">
+    
     <p>Aerolinea:</p>
+    <input name="Aereo" type="number" max = "10" min = "1">
     @for(int i = 0; i < 10; i++){
         <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[@i]">
     }
-    <input type="number" max = "10" min = "1">
+    
     <p>El paquete incluye la siguiente excursion:</p>
+    <input name="Excursion" type="number" max = "10" min = "1">
     @for(int i = 0; i < 10; i++){
         <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[@i]">
     }
-    <input type="number" max = "10" min = "1">
+    
     <input type="submit" value="Enviar">
     <p>¡Muchas gracias!</p>
 </form>
