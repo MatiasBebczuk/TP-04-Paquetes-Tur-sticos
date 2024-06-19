@@ -18,7 +18,14 @@ public class HomeController : Controller
         ViewBag.NombreProyecto = "La vasitlla de Nehuen";
         ViewBag.ListaPaquetes = ORTworld.Paquetes;
         if(ViewBag.ListaPaquetes != null){
-            foreach (Paquete x in ViewBag.ListaPaquetes){
+            foreach (Paquete x in ViewBag.ListaPaquetes.Values){
+                Console.WriteLine($"Hotel: {x.Hotel}");
+                Console.WriteLine($"Aereo: {x.Aereo}");
+                Console.WriteLine($"Excursion: {x.Excursion}");
+            }
+        }
+        if(ORTworld.Paquetes != null){
+            foreach (Paquete x in ORTworld.Paquetes.Values){
                 Console.WriteLine($"Hotel: {x.Hotel}");
                 Console.WriteLine($"Aereo: {x.Aereo}");
                 Console.WriteLine($"Excursion: {x.Excursion}");
@@ -35,7 +42,12 @@ public class HomeController : Controller
         }
         else{
             ViewBag.erroMsg = "Error, los datos ingresados no son correctos";
-            return View(SelectPaquete());
+            ViewBag.ListaPaquetes = ORTworld.Paquetes;
+            ViewBag.ListaDestinos = ORTworld.ListaDestinos;
+            ViewBag.ListaHoteles = ORTworld.ListaHoteles;
+            ViewBag.ListaAereos = ORTworld.ListaAereos;
+            ViewBag.ListaExcursiones = ORTworld.ListaExcursiones;
+            return View("SelectPaquete");
         }
     }
     public IActionResult SelectPaquete(){

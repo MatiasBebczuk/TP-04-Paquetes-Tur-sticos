@@ -8,12 +8,13 @@
     <p>Bienvenidos al sitio web de @ViewBag.NombreProyecto. Pagina con paquetes turisticos de primera calidad.</p>
 </div>
 @if(ViewBag.ListaPaquetes != null){
-    foreach(Paquete x in ViewBag.ListaPaquetes.Values){
+    foreach(KeyValuePair<string, Paquete> x in ViewBag.ListaPaquetes){
     i++;
     <p>Paquete numero @i</p>
-    <li>Hotel: @x.Hotel </li>
-    <li>Aereo: @x.Aereo </li>
-    <li>Excursion: @x.Excursion </li>
+    <li>Destino: @x.Key</li>
+    <li>Hotel: @x.Value.Hotel </li>
+    <li>Aereo: @x.Value.Aereo </li>
+    <li>Excursion: @x.Value.Excursion </li>
     }
 }
 
