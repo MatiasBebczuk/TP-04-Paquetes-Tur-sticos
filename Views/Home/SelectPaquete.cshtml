@@ -10,40 +10,19 @@
         <input type="number" max = "10" min = "1">
     </div>
     <p>Elija su hotel:</p>
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[0]">
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[1]" width=50%>
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[2]">
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[3]" width=50%>
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[4]" width=50%>
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[5]">
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[6]">
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[7]">
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[8]">
-    <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[9]">
+    @for(int i = 0; i < 10; i++){
+        <img src="/imgs/Hoteles/@ViewBag.ListaHoteles[@i]">
+    }
     <input type="number" max = "10" min = "1">
     <p>Aerolinea:</p>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[0]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[1]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[2]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[3]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[4]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[5]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[6]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[7]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[8]" width=20%>
-    <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[9]" width=20%>
+    @for(int i = 0; i < 10; i++){
+        <img src="/imgs/Aerolineas/@ViewBag.ListaAereos[@i]">
+    }
     <input type="number" max = "10" min = "1">
     <p>El paquete incluye la siguiente excursion:</p>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[0]">
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[1]" width=50%>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[2]" width=50%>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[3]" width=50%>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[4]">
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[5]" width=50%>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[6]" width=50%>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[7]" width=50%>
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[8]">
-    <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[9]" width=50%>
+    @for(int i = 0; i < 10; i++){
+        <img src="/imgs/Excursiones/@ViewBag.ListaExcursiones[@i]">
+    }
     <input type="number" max = "10" min = "1">
     <input type="submit" value="Enviar">
     <p>¡Muchas gracias!</p>

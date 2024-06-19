@@ -17,6 +17,13 @@ public class HomeController : Controller
     {
         ViewBag.NombreProyecto = "La vasitlla de Nehuen";
         ViewBag.ListaPaquetes = ORTworld.Paquetes;
+        if(ViewBag.ListaPaquetes != null){
+            foreach (Paquete x in ViewBag.ListaPaquetes){
+                Console.WriteLine($"Hotel: {x.Hotel}");
+                Console.WriteLine($"Aereo: {x.Aereo}");
+                Console.WriteLine($"Excursion: {x.Excursion}");
+            }
+        }
         return View();
     }
     public IActionResult GuardarPaquete (int Destino, int Hotel, int Aereo, int Excursion){

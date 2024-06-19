@@ -1,3 +1,4 @@
+
 html {
   font-size: 14px;
   min-height: 100%;
@@ -21,3 +22,17 @@ footer {
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
 }
+
+form {
+  text-align: center;
+  clear: both;
+
+}
+
+form img{
+  width: 15%;
+  height: auto;
+  margin: 2%;
+
+}
+
